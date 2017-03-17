@@ -1,12 +1,22 @@
-set nocompatible              " be iMproved, required
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"          _                       
+"  __   __(_) _ __ ___   _ __  ___ 
+"  \ \ / /| || '_ ` _ \ | '__|/ __|
+"  _\ V / | || | | | | || |  | (__ 
+" (_)\_/  |_||_| |_| |_||_|   \___|
+"                                  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Vundle Preamble{{{
+set nocompatible              " required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
+" }}}
+
+" Vundle Plugins {{{
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -21,27 +31,24 @@ Plugin 'morhetz/gruvbox'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nikvdp/ejs-syntax'
+"}}}
+"Vundle Postamble{{{
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+"}}}
 set encoding=utf-8
-
 set number
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·,nbsp:‿ " show these hidden characters
 
 "colors
 syntax enable
 set background=dark
 colorscheme gruvbox
 "let g:gruvbox_contrast_dark = "soft"
-
-"hi Visual gui=NONE guibg=White guifg=Black
-
-" Syntastic settings for project specific syntax highlighting
-"
-let g:syntastic_java_javac_config_file_enabled = 1
 
 let mapleader="\<Space>" " leader is space
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
