@@ -38,3 +38,6 @@ alias gpg='gpg2'
 # who wants to highlight, right-click, and copy all the time?
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection c -o'
+
+# tired of typing out proxify
+alias proxify='sudo /home/jtea/Documents/proxify.sh'
