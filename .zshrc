@@ -36,7 +36,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
 # Environment Variables {{{
 #
 # # all your binaries are belong to my PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 #
 # # set preferred EDITOR to vim
 export EDITOR='vim'
@@ -47,9 +47,18 @@ export EDITOR='vim'
 ## nvm source
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-#
+
+export GPG_TTY=`tty`
+export PIP_REQUIRE_VIRTUALENV=true
+
 # Virtualenv wrapper
-# workon || rmvirtualenv || mkvirtualenv
-#export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
 export WORKON_HOME="$HOME/.virtualenvs"
-source /usr/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+source /home/jtea/.local/bin/virtualenvwrapper.sh
+
+PATH="/home/jtea/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/jtea/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/jtea/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/jtea/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/jtea/perl5"; export PERL_MM_OPT;

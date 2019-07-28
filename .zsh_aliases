@@ -41,3 +41,8 @@ alias getclip='xclip -selection c -o'
 
 # tired of typing out proxify
 alias proxify='sudo /home/jtea/Documents/proxify.sh'
+
+# ducttape by region
+function sdt { dt --api-server=ducttape.west.isilon.com "$@" --location=sea1 }
+function rdt { dt --api-server=ducttape.west.isilon.com "$@" --location=rdu1 }
+function hdt { dt --api-server=ducttape.west.isilon.com "$@" --location=hopkinton }

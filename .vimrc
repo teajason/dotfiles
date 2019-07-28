@@ -43,6 +43,7 @@ set encoding=utf-8
 set number
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·,nbsp:‿ " show these hidden characters
+set list
 
 "colors
 syntax enable
@@ -54,7 +55,7 @@ let mapleader="\<Space>" " leader is space
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
 nnoremap <leader>mc :silent make clean\|redraw!\|cw<CR>
 nnoremap <leader>mr :silent make realclean\|redraw!\|cw<CR>
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>n :nohlsearch<CR>
 
 " start with NERDTree open if no files are specified
 autocmd vimenter * if !argc() | NERDTree | endif
